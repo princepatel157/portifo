@@ -37,6 +37,21 @@ const socialLinks = [
     )
   },
   {
+    name: 'Unsplash',
+    href: 'https://unsplash.com/@princepatel1576',
+    icon: (
+      <svg 
+        class="FrJfL" 
+        viewBox="0 0 32 32" version="1.1"
+        aria-labelledby="unsplash-home"
+        aria-hidden="false"
+        style={{ width: '26px', height: '26px'}}
+        >
+        <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z" fill="#94A3B8" />
+      </svg>
+    )
+  },
+  {
     name: 'Gmail',
     href: 'mailto:princepatel1576@gmail.com',
     icon: <GoogleIcon style={{fontSize: '30px'}}/>
@@ -140,7 +155,7 @@ const Header = ({ activeSection, handleScroll=()=>{} }) => {
                   style={{
                     cursor: 'pointer', color: '#94A3B8', textDecoration: 'none',
                     "&:hover": {
-                      color: '#000'
+                      color: '#fff'
                     }
                   }}
                   href={data.href} target='_blank' rel="noreferrer"
