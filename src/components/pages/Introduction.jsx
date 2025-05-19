@@ -10,7 +10,12 @@ const sx={
   },
   text: {
     color: '#94A3B8',
-    lineHeight: '160%'
+    lineHeight: '170%',
+    letterSpacing: '0.5px',
+    fontSize: '15px',
+    '@media (max-width: 600px)': {
+      fontSize: '12px'
+    }
   }
 }
 

@@ -40,44 +40,6 @@ const Home = () => {
   const classes = useStyles();
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const introRef = React.useRef(null);
-  const experienceRef = React.useRef(null);
-
-  const [activeSection, setActiveSection] = useState('introduction');
-
-  // Observe visibility of sections
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.6
-      }
-    );
-
-    if (introRef.current) observer.observe(introRef.current);
-    if (experienceRef.current) observer.observe(experienceRef.current);
-
-    return () => {
-      if (introRef.current) observer.unobserve(introRef.current);
-      if (experienceRef.current) observer.unobserve(experienceRef.current);
-    };
-  }, []);
-
-  const handleScroll = section => {
-    setActiveSection(section);
-    const scrollTarget =
-      section === 'introduction' ? introRef.current : experienceRef.current;
-    scrollTarget?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   useEffect(() => {
     const handleMouseMove = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
@@ -100,9 +62,9 @@ const Home = () => {
         }}
       />
 
-      <Header handleScroll={handleScroll} activeSection={activeSection}/>
+      <Header/>
       <Box className={classes.content}>
-        <Pages introRef={introRef} experienceRef={experienceRef}/>
+        <Pages/>
       </Box>
     </Box>
   );

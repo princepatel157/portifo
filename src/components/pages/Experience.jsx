@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import React from 'react';
+import EastIcon from '@mui/icons-material/East';
 
 const experiences = [
   {
@@ -39,7 +39,10 @@ const sx = {
     display: 'flex',
     flexDirection: 'column',
     gap: '20px',
-    paddingTop: '50px'
+    paddingTop: '50px',
+    '@media (min-width: 600px)': {
+      paddingTop: '120px'
+    }
   },
   cardRoot: {
     display: 'flex',
@@ -55,6 +58,7 @@ const sx = {
       color: 'rgb(94,234,212,1)',
     },
     '@media (max-width: 600px)': {
+      backgroundColor: '#1b253e',
       flexDirection: 'column'
     }
   },
@@ -72,7 +76,12 @@ const sx = {
   },
   title: {
     color: '#E2E8F0',
-    marginBottom: '10px'
+    marginBottom: '10px',
+    fontSize: '16px',
+    '@media (max-width: 600px)': {
+      width: '100%',
+      fontSize: '14px'
+    }
   },
   chipRoot: {
     display: 'flex',
@@ -84,7 +93,29 @@ const sx = {
     color: 'rgb(94, 234 ,212,1)',
     borderRadius: '20px',
     backgroundColor: 'rgb(19 59 53)',
-    padding: '5px 12px'
+    padding: '5px 12px',
+  },
+  chipTitle: {
+    fontSize: '14px',
+    '@media (max-width: 600px)': {
+      fontSize: '12px'
+    }
+  },
+  heading: {
+    fontSize: '20px',
+    letterSpacing: '1px',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '5px',
+    '@media (max-width: 600px)': {
+      fontSize: '15px'
+    }
+  },
+  time: {
+    color: '#94A3B8', fontSize: '14px',
+    '@media (max-width: 600px)': {
+      fontSize: '12px'
+    }
   }
 };
 
@@ -92,7 +123,7 @@ const Chip = ({ title }) => {
 
   return(
     <Box sx={sx.chip}>
-      <Typography fontSize='13px'>
+      <Typography sx={sx.chipTitle}>
         {title}
       </Typography>
     </Box>
@@ -106,7 +137,7 @@ const Card = ({
   return(
     <Box sx={sx.cardRoot}>
       <Box sx={sx.cardLeft}>
-        <Typography color='#94A3B8' fontSize='14px'>
+        <Typography sx={sx.time}>
           {time}
         </Typography>
       </Box>
@@ -114,7 +145,7 @@ const Card = ({
         <Typography sx={sx.title} className='card-title'>
           {title} - {organization}
         </Typography>
-        <Typography fontSize='14px' color='#94A3B8'>
+        <Typography sx={sx.time} color='#94A3B8'>
           {description}
         </Typography>
         <Box sx={sx.chipRoot}>
@@ -130,6 +161,10 @@ const Card = ({
 const Experience = ({...props}) => {
   return (
     <Box sx={sx.root} {...props}>
+      <Typography sx={sx.heading}>
+        EXPERIENCE
+        <EastIcon style={{ fontSize: '20px' }}/>
+      </Typography>
       {
         experiences.map((exp, i) => (<Card {...exp} key={i}/>))
       }

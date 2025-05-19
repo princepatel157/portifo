@@ -71,6 +71,10 @@ const sx = {
     flexDirection: 'column',
     justifyContent: 'space-between',
     height: 'fit-content',
+    '@media (max-width: 600px)': {
+      minHeight: '90vh',
+      padding: '70px 0px',
+    },
     '@media (min-width: 1000px)': {
       padding: '100px 0px',
       position: 'fixed',
@@ -84,66 +88,50 @@ const sx = {
     flexDirection: 'column',
     gap: '40px'
   },
-  pagesRoot: {
-    display: 'flex', marginTop: '30px',
-    flexDirection: 'column',
-    gap: '10px',
-    '@media (max-width: 1000px)': {
-      display: 'none !important',
-      marginTop: '0px'
-    }
-  },
   socialLinks: {
-    display: 'flex', gap: '10px',
+    display: 'flex', gap: '15px',
     '@media (max-width: 1000px)': {
       marginTop: '50px'
+    }
+  },
+  name: {
+    fontSize: '50px', fontWeight: 600,
+    color: '#E2E8F0',
+    '@media (max-width: 600px)': {
+      fontSize: '40px'
+    }
+  },
+  role: {
+    fontSize: '20px', marginBottom: '15px',
+    '@media (max-width: 600px)': {
+      fontSize: '15px'
+    }
+  },
+  desc: {
+    fontSize: '16px', color: '#6B7FA4',
+    '@media (max-width: 600px)': {
+      fontSize: '13px'
     }
   }
 };
 
-const pages= [
-  {
-    _id: 'introduction',
-    name: 'ABOUT',
-  },
-  {
-    _id: 'experience',
-    name: 'EXPERIENCE'
-  }
-  
-]
 
-const Header = ({ activeSection, handleScroll=()=>{} }) => {
+const Header = ({ }) => {
 
   return (
     <Box sx={sx.root}>
       <Box sx={sx.header}>
         <Box sx={sx.mainSection}>
           <Box>
-            <Typography style={{fontSize: '50px', fontWeight: 600, color: '#E2E8F0'}}>
+            <Typography sx={sx.name}>
               Prince Patel
             </Typography>
-            <Typography sx={{fontSize: '20px', marginBottom: '15px'}}>
+            <Typography sx={sx.role}>
               Software Development Engineer - 1
             </Typography>
-            <Typography sx={{fontSize: '16px', color: '#6B7FA4'}}>
+            <Typography sx={sx.desc}>
               I build scalable, full-stack web apps <br/>with clean, efficient code.
             </Typography>
-          </Box>
-
-          {/* pages */}
-          <Box sx={sx.pagesRoot}>
-            {
-              pages.map((page, i)=>{
-                return(
-                  <Box key={i} onClick={()=>handleScroll(page._id)} style={{cursor: 'pointer'}}>
-                    <Typography color={activeSection===page._id ? '#fff' : '#94A3B8'}>
-                      {page.name}
-                    </Typography>
-                  </Box>
-                )
-              })
-            }
           </Box>
         </Box>
 

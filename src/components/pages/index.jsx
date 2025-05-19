@@ -1,7 +1,7 @@
-import { Box } from '@mui/material'
-import React from 'react'
+import { Box } from '@mui/material';
 import Introduction from './Introduction';
 import Experience from './Experience';
+import Projects from './Projects';
 
 const sx = {
   root: {
@@ -11,12 +11,13 @@ const sx = {
   }
 }
 
-const Pages = ({ introRef, experienceRef }) => {
+const Pages = ({ }) => {
 
   return (
     <Box sx={sx.root}>
-      <Introduction id="introduction" ref={introRef}/>
-      <Experience id="introduction" ref={experienceRef}/>
+      <Introduction />
+      <Experience />
+      <Projects/>
     </Box>
   )
 }
