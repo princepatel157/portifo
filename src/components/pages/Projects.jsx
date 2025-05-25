@@ -133,6 +133,7 @@ const Card = ({
                 height: '100%',
                 objectFit: 'cover',
                 display: 'block',
+                opacity: 0.5,
               }}
             />
           </Box>
