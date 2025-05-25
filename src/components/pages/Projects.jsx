@@ -68,7 +68,10 @@ const sx = {
       '&:hover': {
         backgroundColor: 'transparent',
       },
-    }
+    },
+    '&:hover .project-image': {
+      opacity: '0.9 !important',
+    },
   },
   cardLeft: {
     overflow: 'hidden',
@@ -85,7 +88,6 @@ const sx = {
     borderRadius: '10px',
     '@media (max-width: 600px)': {
       width: '60%',
-      
     }
   },
   cardRight: {
@@ -128,12 +130,13 @@ const Card = ({
           <Box sx={sx.imageContainer}>
             <img 
               src={image} alt={name}
+              className='project-image'
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
                 display: 'block',
-                opacity: 0.5,
+                opacity: 0.5
               }}
             />
           </Box>
