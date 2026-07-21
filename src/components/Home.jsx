@@ -92,6 +92,7 @@ const Home = () => {
               pt: { xs: 0, md: '84px' },
               display: 'flex',
               flexDirection: 'column',
+              alignItems: 'stretch',
               minWidth: 0,
             }}
           >

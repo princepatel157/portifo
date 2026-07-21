@@ -8,7 +8,7 @@ import Contact from './Contact';
 
 const Pages = () => {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'stretch' }}>
       <Introduction />
       <Experience />
       <Skills />

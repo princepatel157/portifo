@@ -12,7 +12,7 @@ const Contact = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      sx={{ pt: { xs: 4, md: 6 }, pb: { xs: 6, md: 8 } }}
+      sx={{ pt: { xs: 4, md: 6 }, pb: { xs: 6, md: 8 }, width: '100%' }}
     >
       <Box
         className="glass-card"
