@@ -100,9 +100,9 @@ const Introduction = () => {
                 letterSpacing: '0.2px',
               }}
             >
-              I’m a full-stack developer with 2+ years of experience working with{' '}
-              <strong style={{ color: '#F8FAFC' }}>JavaScript, React.js, Node.js, and TypeScript</strong>.
-              I’m skilled in building scalable web applications, RESTful APIs, and using tools like Docker, AWS EC2, Git, and MongoDB.
+              I’m a full-stack developer with 3+ years of experience working with{' '}
+              <strong style={{ color: '#F8FAFC' }}>TypeScript, Next.js, Node.js, and MongoDB</strong>.
+              I’m skilled in building scalable applications, RESTful APIs, and implementing TDD and accessibility standards.
             </Typography>
 
             <Typography
@@ -115,75 +115,81 @@ const Introduction = () => {
             >
               Currently, I’m working as a{' '}
               <span style={{ color: '#F8FAFC', fontWeight: 600 }}>
-                Software Development Engineer I at Languify Pvt. Ltd.
+                Software Development Engineer I at Underpin Technology FZ-LLC
               </span>
-              , where I contribute to large-scale education platforms (including Cambridge University SEP) that process over{' '}
-              <strong style={{ color: '#38BDF8' }}>10,000 assessments daily</strong>.
+              , where I build real-time socket-based game session architectures and high-frequency transactional ledger systems.
             </Typography>
           </Box>
         </Grid>
       </Grid>
 
-      {/* Feature Cards Grid Row */}
-      <Grid container spacing={2.5}>
+      {/* Feature Cards Grid Row using CSS Grid */}
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' },
+          gridAutoRows: '1fr',
+          gap: { xs: 2, sm: 2.5 },
+        }}
+      >
         {featureCards.map((card) => (
-          <Grid item xs={12} sm={6} md={3} key={card.title}>
+          <Box
+            key={card.title}
+            component={motion.div}
+            whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            className="glass-card"
+            sx={{
+              p: { xs: 2, sm: 2.5 },
+              display: 'flex',
+              flexDirection: 'column',
+              borderRadius: '16px',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              background: 'rgba(15, 23, 42, 0.6)',
+              height: '100%',
+              width: '100%',
+            }}
+          >
             <Box
-              component={motion.div}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="glass-card"
               sx={{
-                p: 2.5,
-                height: '100%',
+                width: { xs: 36, sm: 44 },
+                height: { xs: 36, sm: 44 },
+                borderRadius: '10px',
+                backgroundColor: card.bgColor,
+                color: card.color,
                 display: 'flex',
-                flexDirection: 'column',
-                borderRadius: '16px',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-                background: 'rgba(15, 23, 42, 0.6)',
+                alignItems: 'center',
+                justifyContent: 'center',
+                mb: 2,
+                boxShadow: `0 4px 14px ${card.bgColor}`,
               }}
             >
-              <Box
-                sx={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: '12px',
-                  backgroundColor: card.bgColor,
-                  color: card.color,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  mb: 2,
-                  boxShadow: `0 4px 14px ${card.bgColor}`,
-                }}
-              >
-                {card.icon}
-              </Box>
-
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: 700,
-                  fontSize: '1rem',
-                  color: '#F8FAFC',
-                  mb: 0.8,
-                }}
-              >
-                {card.title}
-              </Typography>
-
-              <Typography
-                sx={{
-                  color: '#94A3B8',
-                  fontSize: '0.85rem',
-                  lineHeight: 1.5,
-                }}
-              >
-                {card.description}
-              </Typography>
+              {React.cloneElement(card.icon, { style: { fontSize: 20 } })}
             </Box>
-          </Grid>
+
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: 700,
+                fontSize: { xs: '0.9rem', sm: '1rem' },
+                color: '#F8FAFC',
+                mb: 0.8,
+              }}
+            >
+              {card.title}
+            </Typography>
+
+            <Typography
+              sx={{
+                color: '#94A3B8',
+                fontSize: { xs: '0.75rem', sm: '0.85rem' },
+                lineHeight: 1.45,
+              }}
+            >
+              {card.description}
+            </Typography>
+          </Box>
         ))}
-      </Grid>
+      </Box>
     </Box>
   );
 };

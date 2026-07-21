@@ -172,21 +172,22 @@ const Navbar = () => {
         </Button>
       </Box>
 
-      {/* MOBILE NAVBAR (Sticky fixed top bar across screen) */}
+      {/* MOBILE NAVBAR (Fixed at top of screen) */}
       <Box
         className="glass-navbar"
         sx={{
           display: { xs: 'flex', md: 'none' },
-          position: 'sticky',
-          top: 12,
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
           zIndex: 1100,
-          mx: 2,
-          mb: 3,
-          borderRadius: '16px',
           px: 2.5,
-          py: 1.2,
+          py: 1.5,
           alignItems: 'center',
           justifyContent: 'space-between',
+          borderRadius: 0,
+          borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
         }}
       >
         <Box

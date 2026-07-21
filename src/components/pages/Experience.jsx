@@ -6,14 +6,27 @@ import { motion } from 'framer-motion';
 const experiences = [
   {
     title: 'Software Development Engineer I',
-    organization: 'Languify',
-    time: 'Aug 2023 – Present',
+    organization: 'Underpin Technology FZ-LLC',
+    time: 'Nov 2025 – Present',
     current: true,
+    avatar: 'U',
+    logo: '/underpin_services_logo.jpeg',
+    avatarBg: 'linear-gradient(135deg, #818CF8 0%, #C084FC 100%)',
+    description:
+      'Worked on real-time socket-based communication to manage live game sessions. Designed and implemented a secure ledger system to track session-wise transactions and maintain user wallets accurately. Developed settlement logic and bet exchange features for betting systems, focusing on low latency and reliability.',
+    skills: ['TypeScript', 'Node.js', 'Redis', 'Socket.io', 'GoLang', 'PostgreSQL'],
+  },
+  {
+    title: 'Software Development Engineer I',
+    organization: 'Languify Pvt. Ltd.',
+    time: 'Aug 2023 – Aug 2025',
+    current: false,
     avatar: 'L',
+    logo: '/languify_in_logo.jpeg',
     avatarBg: 'linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%)',
     description:
-      'Contributed to large-scale systems like the SEP for Cambridge University. Developed advanced features (e.g., gamification, proctoring), integrated OpenAI for smart content, and maintained quality with TDD. Mentored peers and enhanced product performance and UX.',
-    skills: ['JavaScript', 'TypeScript', 'React', 'Node.js', 'Material UI', 'MongoDB', 'OpenAI API'],
+      'Developed Spoken English Proficiency (SEP) platform for Cambridge University processing over 10,000 assessments daily. Followed TDD practices, optimized performance using Redis cache, and integrated OpenAI models for feedback generation and interactive IELTS assessment flows.',
+    skills: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Redis', 'OpenAI APIs', 'Material UI'],
   },
   {
     title: 'Freelance MERN Developer',
@@ -23,19 +36,20 @@ const experiences = [
     avatarIcon: <Briefcase size={20} />,
     avatarBg: 'rgba(99, 102, 241, 0.15)',
     description:
-      'Built and deployed full-stack solutions for varied clients in sectors like dairy, farming, and retail. Delivered secure authentication, payment integrations, WhatsApp OTP verification, and complete product deployments on cloud servers.',
-    skills: ['React', 'Node.js', 'Express.js', 'Tailwind CSS', 'MySQL', 'Redux', 'Razorpay'],
+      'Built and deployed end-to-end full-stack systems across multiple industries. Developed and shipped Nana Dairy Farming, Ashi Helmet Store, and Tenant Network web solutions, featuring custom payment integrations, secure authentication, and AWS deployments.',
+    skills: ['React', 'Node.js', 'Express.js', 'MongoDB', 'MySQL', 'Tailwind', 'CI/CD'],
   },
   {
-    title: 'Backend Developer Intern',
-    organization: 'Jungleworks',
+    title: 'Node Backend Developer (Intern)',
+    organization: 'Jungleworks Pvt. Ltd.',
     time: 'Jan 2022 – Aug 2022',
     current: false,
     avatarIcon: <Briefcase size={20} />,
+    logo: '/jungleworks_logo.jpeg',
     avatarBg: 'rgba(45, 212, 191, 0.15)',
     description:
-      'Worked on real-time backend development using Node.js and MySQL. Implemented essential features like coupon systems, email automation, and commission handling, participating in live project sprints.',
-    skills: ['Node.js', 'Express.js', 'Linux', 'Git', 'Bash Scripting', 'MySQL'],
+      'Gained hands-on backend expertise in Node.js, Express, and MySQL. Implemented coupon settlement schemes, commission engines, automated email triggers, and assisted in project deliveries during monthly product sprints.',
+    skills: ['Node.js', 'Express.js', 'MySQL', 'JavaScript', 'Git', 'Linux'],
   },
 ];
 
@@ -173,39 +187,60 @@ const Experience = () => {
                   borderRadius: '16px',
                   position: 'relative',
                   width: '100%',
+                  display: 'flex',
+                  flexDirection: { xs: 'column', sm: 'row' },
+                  gap: { xs: 2, sm: 3 },
+                  alignItems: 'flex-start',
                 }}
               >
+                {/* Logo Container on the left inside the card */}
                 <Box
                   sx={{
+                    width: { xs: 48, sm: 64, md: 72 },
+                    height: { xs: 48, sm: 64, md: 72 },
+                    borderRadius: '50%',
+                    background: exp.avatarBg,
+                    color: '#FFFFFF',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between',
-                    flexWrap: 'wrap',
-                    gap: 1.5,
-                    mb: 1.5,
+                    justifyContent: 'center',
+                    fontWeight: 800,
+                    fontSize: '1.5rem',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                    flexShrink: 0,
+                    overflow: 'hidden',
                   }}
                 >
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                    {/* Avatar Circle */}
+                  {exp.logo ? (
                     <Box
+                      component="img"
+                      src={exp.logo}
+                      alt={exp.organization}
                       sx={{
-                        width: 42,
-                        height: 42,
-                        borderRadius: '50%',
-                        background: exp.avatarBg,
-                        color: '#FFFFFF',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontWeight: 800,
-                        fontSize: '1.1rem',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-                        flexShrink: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
                       }}
-                    >
-                      {exp.avatar ? exp.avatar : exp.avatarIcon}
-                    </Box>
+                    />
+                  ) : exp.avatar ? (
+                    exp.avatar
+                  ) : (
+                    exp.avatarIcon
+                  )}
+                </Box>
 
+                {/* Details Container on the right */}
+                <Box sx={{ flex: 1, minWidth: 0, width: '100%' }}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      flexWrap: 'wrap',
+                      gap: 1.5,
+                      mb: 1.5,
+                    }}
+                  >
                     <Typography
                       variant="h6"
                       sx={{
@@ -216,63 +251,63 @@ const Experience = () => {
                     >
                       {exp.title} <span style={{ color: '#94A3B8', fontWeight: 400 }}>– {exp.organization}</span>
                     </Typography>
+
+                    {/* Current Pill Badge */}
+                    {exp.current && (
+                      <Box
+                        sx={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: 0.6,
+                          px: 1.5,
+                          py: 0.4,
+                          borderRadius: '20px',
+                          backgroundColor: 'rgba(16, 185, 129, 0.15)',
+                          border: '1px solid rgba(16, 185, 129, 0.3)',
+                          color: '#10B981',
+                          fontSize: '0.75rem',
+                          fontWeight: 700,
+                        }}
+                      >
+                        <CheckCircle2 size={12} />
+                        Current
+                      </Box>
+                    )}
                   </Box>
 
-                  {/* Current Pill Badge */}
-                  {exp.current && (
-                    <Box
-                      sx={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: 0.6,
-                        px: 1.5,
-                        py: 0.4,
-                        borderRadius: '20px',
-                        backgroundColor: 'rgba(16, 185, 129, 0.15)',
-                        border: '1px solid rgba(16, 185, 129, 0.3)',
-                        color: '#10B981',
-                        fontSize: '0.75rem',
-                        fontWeight: 700,
-                      }}
-                    >
-                      <CheckCircle2 size={12} />
-                      Current
-                    </Box>
-                  )}
-                </Box>
+                  {/* Description */}
+                  <Typography
+                    sx={{
+                      color: '#94A3B8',
+                      fontSize: '0.9rem',
+                      lineHeight: 1.65,
+                      mb: 2.5,
+                    }}
+                  >
+                    {exp.description}
+                  </Typography>
 
-                {/* Description */}
-                <Typography
-                  sx={{
-                    color: '#94A3B8',
-                    fontSize: '0.9rem',
-                    lineHeight: 1.65,
-                    mb: 2.5,
-                  }}
-                >
-                  {exp.description}
-                </Typography>
-
-                {/* Skill Chips */}
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                  {exp.skills.map((skill) => (
-                    <Chip
-                      key={skill}
-                      label={skill}
-                      sx={{
-                        backgroundColor: 'rgba(56, 189, 248, 0.08)',
-                        color: '#38BDF8',
-                        border: '1px solid rgba(56, 189, 248, 0.2)',
-                        fontWeight: 600,
-                        fontSize: '0.8rem',
-                        borderRadius: '20px',
-                        py: 0.5,
-                        '&:hover': {
-                          backgroundColor: 'rgba(56, 189, 248, 0.18)',
-                        },
-                      }}
-                    />
-                  ))}
+                  {/* Skill Chips */}
+                  <Box sx={{ gridGap: '8px', display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                    {exp.skills.map((skill) => (
+                      <Chip
+                        key={skill}
+                        label={skill}
+                        sx={{
+                          backgroundColor: 'rgba(56, 189, 248, 0.08)',
+                          color: '#38BDF8',
+                          border: '1px solid rgba(56, 189, 248, 0.2)',
+                          fontWeight: 600,
+                          fontSize: '0.8rem',
+                          borderRadius: '20px',
+                          py: 0.5,
+                          '&:hover': {
+                            backgroundColor: 'rgba(56, 189, 248, 0.18)',
+                          },
+                        }}
+                      />
+                    ))}
+                  </Box>
                 </Box>
               </Box>
             </Box>

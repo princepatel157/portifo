@@ -55,7 +55,8 @@ const Home = () => {
         sx={{
           width: '100%',
           px: { xs: 2, sm: 3, md: 4, lg: 5 },
-          py: { xs: 2, md: 3 },
+          pt: { xs: '96px', md: 3 },
+          pb: { xs: 3, md: 4 },
           position: 'relative',
           zIndex: 2,
         }}

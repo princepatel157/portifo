@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Typography, Grid } from '@mui/material';
-import { Cpu } from 'lucide-react';
+import { Box, Typography } from '@mui/material';
+import MemoryIcon from '@mui/icons-material/Memory';
 import { motion } from 'framer-motion';
 
 const skillsList = [
@@ -34,6 +34,24 @@ const skillsList = [
     ),
   },
   {
+    name: 'Next.js',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="14" fill="#000000" />
+        <path d="M22.5 22.5L14.5 12.5V22.5H12.5V9.5H14.5L20.5 17.5V9.5H22.5V22.5Z" fill="#FFFFFF" />
+      </svg>
+    ),
+  },
+  {
+    name: 'GoLang',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="14" fill="#00ADD8" fillOpacity="0.15" stroke="#00ADD8" strokeWidth="1.5" />
+        <path d="M10 14C10 14 11 11 16 11C21 11 22 14 22 16C22 19 19 20 16 20C13 20 12 22 12 24" stroke="#00ADD8" strokeWidth="2.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
     name: 'Node.js',
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -52,6 +70,34 @@ const skillsList = [
     ),
   },
   {
+    name: 'Redis',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M16 4L28 10L16 16L4 10L16 4Z" fill="#D82C20" />
+        <path d="M4 14L16 20L28 14M4 19L16 25L28 19" stroke="#D82C20" strokeWidth="1.5" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Socket.io',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="14" fill="#010101" />
+        <path d="M9 16C9 12.1 12.1 9 16 9C19.9 9 23 12.1 23 16C23 19.9 19.9 23 16 23C12.1 23 9 19.9 9 16Z" stroke="#FFFFFF" strokeWidth="1.5" />
+        <path d="M16 11V16H21" stroke="#38BDF8" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Zustand',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="14" fill="#4B3A2F" stroke="#E2E8F0" strokeWidth="1.5" />
+        <text x="16" y="20" fontSize="9" fontWeight="800" fill="#F8FAFC" textAnchor="middle">🐻 zustand</text>
+      </svg>
+    ),
+  },
+  {
     name: 'Material UI',
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -63,19 +109,18 @@ const skillsList = [
     ),
   },
   {
-    name: 'Docker',
+    name: 'Tailwind CSS',
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <path d="M28 17.5C27 15.8 25 15 23.5 15.5C22.8 13.8 21 12.5 19 12.8C18.8 10 16.5 8 14 8C11.5 8 9.2 10 9 12.8C7.5 13.2 6.2 14.5 6 16C4 16.5 2.5 18.2 2.5 20.5C2.5 23.5 5 26 8 26H24C26.8 26 29 23.8 29 21C29 19.5 28.5 18.3 28 17.5Z" fill="#2496ED" />
+        <path d="M16 12C20 12 21.5 14 23 16C20 16 18.5 15.2 16 16C13.5 16.8 12.5 19 9 19C13 19 14.5 17 16 16C19 16 20.5 16.8 23 16M9 13C13 13 14.5 11 16 10C19 10 20.5 10.8 23 10C20 10 18.5 9.2 16 10C13.5 10.8 12.5 13 9 13Z" stroke="#38BDF8" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
   },
   {
-    name: 'AWS',
+    name: 'Docker',
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <path d="M8 12L12 22L16 12L20 22L24 12" stroke="#FF9900" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M6 25C12 28 20 28 26 25" stroke="#FF9900" strokeWidth="2" strokeLinecap="round" />
+        <path d="M28 17.5C27 15.8 25 15 23.5 15.5C22.8 13.8 21 12.5 19 12.8C18.8 10 16.5 8 14 8C11.5 8 9.2 10 9 12.8C7.5 13.2 6.2 14.5 6 16C4 16.5 2.5 18.2 2.5 20.5C2.5 23.5 5 26 8 26H24C26.8 26 29 23.8 29 21C29 19.5 28.5 18.3 28 17.5Z" fill="#2496ED" />
       </svg>
     ),
   },
@@ -92,16 +137,7 @@ const skillsList = [
     ),
   },
   {
-    name: 'Express.js',
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <circle cx="16" cy="16" r="14" fill="#1E293B" stroke="#94A3B8" strokeWidth="1.5" />
-        <text x="16" y="21" fontSize="13" fontWeight="800" fill="#F8FAFC" textAnchor="middle">ex</text>
-      </svg>
-    ),
-  },
-  {
-    name: 'OpenAI',
+    name: 'OpenAI APIs',
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
         <circle cx="16" cy="16" r="14" fill="rgba(16, 185, 129, 0.15)" stroke="#10B981" strokeWidth="1.5" />
@@ -151,62 +187,68 @@ const Skills = () => {
           mb: 4,
         }}
       >
-        <Cpu size={14} />
+        <MemoryIcon style={{ fontSize: 14 }} />
         TECH STACK
       </Box>
 
-      {/* Grid of Skill Cards */}
-      <Grid container spacing={2}>
-        {skillsList.map((skill, index) => (
-          <Grid item xs={6} sm={4} md={3} key={skill.name}>
+      {/* Grid of Skill Cards using CSS Grid */}
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: 'repeat(3, 1fr)', sm: 'repeat(4, 1fr)', md: 'repeat(6, 1fr)', lg: 'repeat(8, 1fr)' },
+          gap: { xs: 1.5, sm: 2 },
+        }}
+      >
+        {skillsList.map((skill) => (
+          <Box
+            key={skill.name}
+            component={motion.div}
+            whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.2 } }}
+            className="glass-card"
+            sx={{
+              p: 2.5,
+              borderRadius: '16px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 1.5,
+              textAlign: 'center',
+              background: 'rgba(15, 23, 42, 0.55)',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              width: '100%',
+              '&:hover': {
+                borderColor: 'rgba(56, 189, 248, 0.4)',
+                boxShadow: '0 10px 25px -5px rgba(56, 189, 248, 0.2)',
+              },
+            }}
+          >
             <Box
-              component={motion.div}
-              whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.2 } }}
-              className="glass-card"
               sx={{
-                p: 2.5,
-                borderRadius: '16px',
                 display: 'flex',
-                flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: 1.5,
-                textAlign: 'center',
-                background: 'rgba(15, 23, 42, 0.55)',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  borderColor: 'rgba(56, 189, 248, 0.4)',
-                  boxShadow: '0 10px 25px -5px rgba(56, 189, 248, 0.2)',
-                },
+                width: 48,
+                height: 48,
               }}
             >
-              <Box
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: 48,
-                  height: 48,
-                }}
-              >
-                {skill.icon}
-              </Box>
-
-              <Typography
-                sx={{
-                  color: '#F8FAFC',
-                  fontWeight: 600,
-                  fontSize: '0.9rem',
-                }}
-              >
-                {skill.name}
-              </Typography>
+              {skill.icon}
             </Box>
-          </Grid>
+
+            <Typography
+              sx={{
+                color: '#F8FAFC',
+                fontWeight: 600,
+                fontSize: '0.9rem',
+              }}
+            >
+              {skill.name}
+            </Typography>
+          </Box>
         ))}
-      </Grid>
+      </Box>
     </Box>
   );
 };
