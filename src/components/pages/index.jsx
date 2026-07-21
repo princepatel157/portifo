@@ -1,25 +1,21 @@
+import React from 'react';
 import { Box } from '@mui/material';
 import Introduction from './Introduction';
 import Experience from './Experience';
+import Skills from './Skills';
 import Projects from './Projects';
+import Contact from './Contact';
 
-const sx = {
-  root: {
-    marginBottom: '100px',
-    display: 'flex',
-    flexDirection: 'column',
-  }
-}
-
-const Pages = ({ }) => {
-
+const Pages = () => {
   return (
-    <Box sx={sx.root}>
+    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <Introduction />
       <Experience />
-      <Projects/>
+      <Skills />
+      <Projects />
+      <Contact />
     </Box>
-  )
-}
+  );
+};
 
-export default Pages
+export default Pages;
