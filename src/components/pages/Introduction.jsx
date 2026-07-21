@@ -100,9 +100,10 @@ const Introduction = () => {
                 letterSpacing: '0.2px',
               }}
             >
-              I’m a full-stack developer with 3+ years of experience working with{' '}
+              I’m a full-stack developer with 3+ years of experience in{' '}
               <strong style={{ color: '#F8FAFC' }}>TypeScript, Next.js, Node.js, and MongoDB</strong>.
               I’m skilled in building scalable applications, RESTful APIs, and implementing TDD and accessibility standards.
+              Experienced with integrating Generative AI features and tools.
             </Typography>
 
             <Typography
@@ -117,7 +118,7 @@ const Introduction = () => {
               <span style={{ color: '#F8FAFC', fontWeight: 600 }}>
                 Software Development Engineer I at Underpin Technology FZ-LLC
               </span>
-              , where I build real-time socket-based game session architectures and high-frequency transactional ledger systems.
+              . I’m familiar with Docker, quick to learn, and a proactive team player focused on delivering high-quality software, building real-time socket game architectures, and high-frequency transactional ledger systems.
             </Typography>
           </Box>
         </Grid>

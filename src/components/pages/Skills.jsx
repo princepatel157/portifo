@@ -43,11 +43,13 @@ const skillsList = [
     ),
   },
   {
-    name: 'GoLang',
+    name: 'React Native',
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <circle cx="16" cy="16" r="14" fill="#00ADD8" fillOpacity="0.15" stroke="#00ADD8" strokeWidth="1.5" />
-        <path d="M10 14C10 14 11 11 16 11C21 11 22 14 22 16C22 19 19 20 16 20C13 20 12 22 12 24" stroke="#00ADD8" strokeWidth="2.5" strokeLinecap="round" />
+        <rect width="32" height="32" rx="6" fill="#1A1C24" />
+        <ellipse cx="16" cy="16" rx="12" ry="4.5" stroke="#61DAFB" strokeWidth="1.5" transform="rotate(30 16 16)" />
+        <ellipse cx="16" cy="16" rx="12" ry="4.5" stroke="#61DAFB" strokeWidth="1.5" transform="rotate(150 16 16)" />
+        <rect x="12" y="9" width="8" height="14" rx="2" stroke="#FFFFFF" strokeWidth="1.5" />
       </svg>
     ),
   },
@@ -61,11 +63,30 @@ const skillsList = [
     ),
   },
   {
+    name: 'Express.js',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="6" fill="#1F2937" />
+        <text x="16" y="21" fontSize="10" fontWeight="800" fill="#FFFFFF" textAnchor="middle" letterSpacing="0.5">EX</text>
+      </svg>
+    ),
+  },
+  {
     name: 'MongoDB',
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
         <path d="M15.2 3.5C15.2 3.5 15.7 3 16 3C16.3 3 16.8 3.5 16.8 3.5C19.5 8.2 24 13.5 24 18.5C24 23.2 20.4 27 16 27C11.6 27 8 23.2 8 18.5C8 13.5 12.5 8.2 15.2 3.5Z" fill="#13AA52" />
         <path d="M16 3V27" stroke="#47A248" strokeWidth="1.5" />
+      </svg>
+    ),
+  },
+  {
+    name: 'PostgreSQL',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M16 4C9.4 4 4 9.4 4 16C4 22.6 9.4 28 16 28C22.6 28 28 22.6 28 16C28 9.4 22.6 4 16 4Z" fill="#336791" fillOpacity="0.2" stroke="#336791" strokeWidth="2" />
+        <path d="M12 12C12 12 14 10 17 10C20 10 21 12 21 14C21 17 18 18 16 18C14 18 13 20 13 22" stroke="#336791" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="13" cy="24" r="1" fill="#336791" />
       </svg>
     ),
   },
@@ -117,10 +138,48 @@ const skillsList = [
     ),
   },
   {
+    name: 'Supabase',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="6" fill="#1C1C1C" />
+        <path d="M16.5 6L8 16.5H15L14.5 26L23 15.5H16L16.5 6Z" fill="#3ECF8E" />
+      </svg>
+    ),
+  },
+  {
+    name: 'NATS',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="14" fill="#2467C0" fillOpacity="0.15" stroke="#2467C0" strokeWidth="1.5" />
+        <path d="M9 16C9 12.1 12.1 9 16 9C19.9 9 23 12.1 23 16" stroke="#2467C0" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M12 21L16 17L20 21" stroke="#2467C0" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
     name: 'Docker',
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
         <path d="M28 17.5C27 15.8 25 15 23.5 15.5C22.8 13.8 21 12.5 19 12.8C18.8 10 16.5 8 14 8C11.5 8 9.2 10 9 12.8C7.5 13.2 6.2 14.5 6 16C4 16.5 2.5 18.2 2.5 20.5C2.5 23.5 5 26 8 26H24C26.8 26 29 23.8 29 21C29 19.5 28.5 18.3 28 17.5Z" fill="#2496ED" />
+      </svg>
+    ),
+  },
+  {
+    name: 'TurboRepo',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="6" fill="#09090B" />
+        <path d="M6 16L13.5 8.5L21 16L13.5 23.5L6 16Z" stroke="#FF007A" strokeWidth="1.5" fill="rgba(255, 0, 122, 0.15)" />
+        <path d="M12.5 16L17.5 11L22.5 16L17.5 21L12.5 16Z" stroke="#00DF89" strokeWidth="1.5" fill="rgba(0, 223, 137, 0.15)" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Vercel',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="6" fill="#000000" />
+        <path d="M16 8L25 24H7L16 8Z" fill="#FFFFFF" />
       </svg>
     ),
   },
@@ -133,25 +192,6 @@ const skillsList = [
         <circle cx="20" cy="12" r="2.5" fill="#FFFFFF" />
         <circle cx="20" cy="20" r="2.5" fill="#FFFFFF" />
         <path d="M12 16H20M20 12V20" stroke="#FFFFFF" strokeWidth="1.5" />
-      </svg>
-    ),
-  },
-  {
-    name: 'OpenAI APIs',
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <circle cx="16" cy="16" r="14" fill="rgba(16, 185, 129, 0.15)" stroke="#10B981" strokeWidth="1.5" />
-        <path d="M16 8V24M8 16H24M10.3 10.3L21.7 21.7M21.7 10.3L10.3 21.7" stroke="#10B981" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    name: 'PostgreSQL',
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <path d="M16 4C9.4 4 4 9.4 4 16C4 22.6 9.4 28 16 28C22.6 28 28 22.6 28 16C28 9.4 22.6 4 16 4Z" fill="#336791" fillOpacity="0.2" stroke="#336791" strokeWidth="2" />
-        <path d="M12 12C12 12 14 10 17 10C20 10 21 12 21 14C21 17 18 18 16 18C14 18 13 20 13 22" stroke="#336791" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="13" cy="24" r="1" fill="#336791" />
       </svg>
     ),
   },

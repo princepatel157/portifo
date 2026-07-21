@@ -13,8 +13,8 @@ const experiences = [
     logo: '/underpin_services_logo.jpeg',
     avatarBg: 'linear-gradient(135deg, #818CF8 0%, #C084FC 100%)',
     description:
-      'Worked on real-time socket-based communication to manage live game sessions. Designed and implemented a secure ledger system to track session-wise transactions and maintain user wallets accurately. Developed settlement logic and bet exchange features for betting systems, focusing on low latency and reliability.',
-    skills: ['TypeScript', 'Node.js', 'Redis', 'Socket.io', 'GoLang', 'PostgreSQL'],
+      'Worked on real-time socket-based communication for live game sessions and designed a secure ledger system to track transactions and maintain user wallets. Implemented CloudFront resource caching to reduce bandwidth usage, and optimized sportsbook API integration by reducing token consumption from 180 to 30 tokens per request to lower operational costs.',
+    skills: ['TypeScript', 'Node.js', 'Redis', 'Socket.io', 'PostgreSQL', 'NATs'],
   },
   {
     title: 'Software Development Engineer I',
@@ -25,7 +25,7 @@ const experiences = [
     logo: '/languify_in_logo.jpeg',
     avatarBg: 'linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%)',
     description:
-      'Developed Spoken English Proficiency (SEP) platform for Cambridge University processing over 10,000 assessments daily. Followed TDD practices, optimized performance using Redis cache, and integrated OpenAI models for feedback generation and interactive IELTS assessment flows.',
+      'Developed the Spoken English Proficiency (SEP) system for Cambridge University, processing 10,000+ daily assessments. Practiced Test-Driven Development (TDD) to deliver reliable code, implemented Redis caching to optimize user-specific API performance, and integrated OpenAI models to enhance personalized learning content.',
     skills: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Redis', 'OpenAI APIs', 'Material UI'],
   },
   {
@@ -36,7 +36,7 @@ const experiences = [
     avatarIcon: <Briefcase size={20} />,
     avatarBg: 'rgba(99, 102, 241, 0.15)',
     description:
-      'Built and deployed end-to-end full-stack systems across multiple industries. Developed and shipped Nana Dairy Farming, Ashi Helmet Store, and Tenant Network web solutions, featuring custom payment integrations, secure authentication, and AWS deployments.',
+      'Designed and deployed backend systems for various industries, successfully shipping Nana Dairy Farming, Ashi Helmet Store, and Tenant Network. Developed features like Razorpay, email authentication, WhatsApp verification, and analytics while optimizing performance following TDD and SOLID principles.',
     skills: ['React', 'Node.js', 'Express.js', 'MongoDB', 'MySQL', 'Tailwind', 'CI/CD'],
   },
   {
@@ -48,7 +48,7 @@ const experiences = [
     logo: '/jungleworks_logo.jpeg',
     avatarBg: 'rgba(45, 212, 191, 0.15)',
     description:
-      'Gained hands-on backend expertise in Node.js, Express, and MySQL. Implemented coupon settlement schemes, commission engines, automated email triggers, and assisted in project deliveries during monthly product sprints.',
+      'Acquired backend expertise in Node.js, Express, and MySQL while working on live features including coupon schemes, commission engines, and automated email triggers. Managed monthly sprints for Rappo to ensure timely delivery of product tasks.',
     skills: ['Node.js', 'Express.js', 'MySQL', 'JavaScript', 'Git', 'Linux'],
   },
 ];
